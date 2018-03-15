@@ -42,7 +42,7 @@ public class MemberRestController {
 	@RequestMapping(value = "restfulGetImageExample", produces = MediaType.IMAGE_JPEG_VALUE)
 	public byte[] getImageExample(HttpServletRequest request) {
 		try {
-			Path path = Paths.get(request.getServletContext().getRealPath("/static/image/image01.jpg"));
+			Path path = Paths.get(request.getServletContext().getRealPath("/static/images/image01.jpg"));
 			return Files.readAllBytes(path);
 		} catch (IOException e) {
 			e.printStackTrace();
