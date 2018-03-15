@@ -4,7 +4,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/tx
 		http://www.springframework.org/schema/tx/spring-tx.xsd ">
 		
@@ -27,7 +27,7 @@
 				<prop key="current_session_context_class">thread</prop>
 			</props>
 		</property>
-		<property name="packagesToScan" value="model.pojo" />
+		<property name="packagesToScan" value="*.model.pojo" />
 	</bean>
 
 	<!-- 4.4宣告Spring交易管理者 -->
