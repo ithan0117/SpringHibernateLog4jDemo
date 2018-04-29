@@ -52,7 +52,7 @@ public class MemberRestController {
 	}
 	
 	@RequestMapping(value = "receiveRequestParamsWithJsonFormat", consumes = {MediaType.APPLICATION_JSON_VALUE})
-	public String receiveRequestParamsWithJsonFormat(@RequestBody MemberBean member) throws IllegalArgumentException, IllegalAccessException {
+	public String receiveRequestParamsWithJsonFormat(@RequestBody MemberBean member) {
 		System.out.println("id : " + member.getId());
 		System.out.println("account : " + member.getAccount());
 		System.out.println("password : " + member.getPassword());
