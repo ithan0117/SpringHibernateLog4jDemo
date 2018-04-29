@@ -142,7 +142,7 @@ public class ExtraController {
 
 	@RequestMapping("exceptionTest")
 	public String exceptionTest() {
-		int i = 1 / 0;
+		int i = 1 / 0;//故意產生的例外
 		return "result";
 	}
 }

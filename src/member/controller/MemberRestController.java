@@ -14,6 +14,7 @@ import member.model.pojo.MemberBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,5 +49,17 @@ public class MemberRestController {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	@RequestMapping(value = "receiveRequestParamsWithJsonFormat", consumes = {MediaType.APPLICATION_JSON_VALUE})
+	public String receiveRequestParamsWithJsonFormat(@RequestBody MemberBean member) throws IllegalArgumentException, IllegalAccessException {
+		System.out.println("id : " + member.getId());
+		System.out.println("account : " + member.getAccount());
+		System.out.println("password : " + member.getPassword());
+		System.out.println("nickname : " + member.getNickname());
+		System.out.println("createTime : " + member.getCreateTime());
+		System.out.println("pass : " + member.getPass());
+		System.out.println("sessionId : " + member.getSessionId());
+		return "success";
 	}
 }

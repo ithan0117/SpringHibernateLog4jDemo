@@ -4,6 +4,32 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script>
+	function receiveRequestParamsWithJsonFormat(){
+		var xhr = new XMLHttpRequest();
+		if (xhr) {
+			var url = "memberRest/receiveRequestParamsWithJsonFormat";
+			var id = document.getElementById("id").value;
+			var account = document.getElementById("account").value;
+			var password = document.getElementById("password").value;
+			var nickname = document.getElementById("nickname").value;
+			var createTime = new Date(document.getElementById("createTime").value);
+			var pass = new Boolean(document.getElementById("pass").value);
+			var sessionId = document.getElementById("sessionId").value;
+			var params = {id : id, account : account, password : password, nickname : nickname
+					, createTime : createTime, pass : pass, sessionId : sessionId}
+			xhr.open("POST", url);
+			xhr.setRequestHeader("Content-type", "application/json");
+			xhr.send(JSON.stringify(params));
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4 && xhr.status == 200) {
+			        alert("take a look at eclipse console");
+			    }
+			};
+		}
+		return false;
+	}
+</script>
 </head>
 <body>
 	<h1>index</h1>
@@ -28,6 +54,40 @@
 	<a href="memberRest/restfulExample2">restfulExample2</a><br>
 	<a href="memberRest/pathVariableExample/2">pathVariableExample</a><br>
 	<a href="memberRest/restfulGetImageExample">restfulGetImageExample</a>
+	<table border="1">
+		<tr><th colspan="2">receiveRequestParamsWithJsonFormat</th></tr>
+		<tr>
+			<td>id</td>
+			<td><input type="text" id="id" value="3"></td>
+		</tr>
+		<tr>
+			<td>account</td>
+			<td><input type="text" id="account" value="java003@ntut.edu.tw"></td>
+		</tr>
+		<tr>
+			<td>password</td>
+			<td><input type="text" id="password" value="********"></td>
+		</tr>
+		<tr>
+			<td>nickname</td>
+			<td><input type="text" id="nickname" value="William"></td>
+		</tr>
+		<tr>
+			<td>createTime</td>
+			<td><input type="text" id="createTime" value="2016-04-26 09:00:00"></td>
+		</tr>
+		<tr>
+			<td>pass</td>
+			<td><input type="text" id="pass" value="true"></td>
+		</tr>
+		<tr>
+			<td>sessionId</td>
+			<td><input type="text" id="sessionId" value="DDE7FD4EF8AA906E433B45EADE5E61A6"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="submit" onclick="receiveRequestParamsWithJsonFormat()"></td>
+		</tr>
+	</table>
 	<hr>
 	<h3>ExtraController</h3>
 	<a href="extra/getImageExample">getImageExample</a><br>
