@@ -26,6 +26,6 @@ public class MemberServlet extends HttpServlet {
 		Integer id = Integer.parseInt(request.getParameter("id"));
 		MemberBean mb = memberDAO.selectMemberByKey(id);
 		request.setAttribute("member", mb);
-		request.getRequestDispatcher("/result.jsp").forward(request, response);
+		request.getRequestDispatcher("/pages/result.jsp").forward(request, response);
 	}
 }
