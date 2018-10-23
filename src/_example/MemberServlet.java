@@ -7,12 +7,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
-
-import web.member.dao.MemberDao;
-import web.member.dao.impl.MemberDaoImpl;
 import web.member.pojo.MemberBean;
+import web.member.service.MemberService;
+import web.member.service.impl.MemberServiceImpl;
 
 //@WebServlet("/member/findMemberByKey")
 public class MemberServlet extends HttpServlet {
@@ -20,11 +17,9 @@ public class MemberServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		WebApplicationContext context = WebApplicationContextUtils
-				.getRequiredWebApplicationContext(getServletContext());
-		MemberDao memberDAO = context.getBean(MemberDaoImpl.class);
+		MemberService memberService = new MemberServiceImpl();
 		Integer id = Integer.parseInt(request.getParameter("id"));
-		MemberBean mb = memberDAO.selectMemberByKey(id);
+		MemberBean mb = memberService.selectMemberByKey(id);
 		request.setAttribute("member", mb);
 		request.getRequestDispatcher("/pages/result.jsp").forward(request, response);
 	}
