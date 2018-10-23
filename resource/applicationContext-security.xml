@@ -5,6 +5,8 @@
 		http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/security
 		http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+		
+	<beans:description>spring security</beans:description>
 
 	<http pattern="/member*/**" security="none" />
 	<http pattern="/extra/**" security="none" once-per-request="false" />

@@ -1,4 +1,4 @@
-package member.model.pojo;
+package web.member.pojo;
 
 import java.io.Serializable;
 import java.sql.Timestamp;

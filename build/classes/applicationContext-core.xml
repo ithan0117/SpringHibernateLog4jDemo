@@ -7,11 +7,10 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context-4.3.xsd ">
 
-	<description>Spring Core</description>
+	<description>spring core</description>
 
-	<!-- Hibernate步驟7 : 將DAO實作類別交給Spring-Core管理 -->
-	<bean id="memberDAO" class="member.model.dao.MemberDaoImpl">
-		<constructor-arg ref="sessionFactory" />
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/db" />
 	</bean>
 
 </beans>

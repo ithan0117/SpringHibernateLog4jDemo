@@ -1,13 +1,13 @@
-package member.controller;
-
-import member.model.dao.MemberDao;
-import member.model.pojo.MemberBean;
+package web.member.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import web.member.dao.MemberDao;
+import web.member.pojo.MemberBean;
 
 @Controller//4.2.1宣告成控制器類別
 @RequestMapping("member")//4.2.2設定此控制器映射的根URL路徑

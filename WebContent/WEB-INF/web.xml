@@ -9,7 +9,7 @@
 		<welcome-file>/pages/index.jsp</welcome-file>
 	</welcome-file-list>
 
-	<!-- Spring-Core -->
+	<!-- spring core -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -22,10 +22,10 @@
 		</param-value>
 	</context-param>
 
-	<!-- Hibernate -->
+	<!-- hibernate -->
 	<filter>
 		<filter-name>HibernateFilter</filter-name>
-		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+		<filter-class>org.springframework.orm.hibernate5.support.OpenSessionInViewFilter</filter-class>
 		<init-param>
 			<param-name>sessionFactoryBeanName</param-name>
 			<param-value>sessionFactory</param-value>
@@ -36,9 +36,9 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-	<!-- Spring-MVC -->
+	<!-- spring mvc -->
 	<servlet>
-		<servlet-name>mvcDispatcher</servlet-name>
+		<servlet-name>DispatcherServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
@@ -47,7 +47,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>mvcDispatcher</servlet-name>
+		<servlet-name>DispatcherServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	

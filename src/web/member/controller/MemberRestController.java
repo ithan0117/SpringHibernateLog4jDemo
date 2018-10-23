@@ -1,4 +1,4 @@
-package member.controller;
+package web.member.controller;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -7,9 +7,6 @@ import java.nio.file.Paths;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-
-import member.model.dao.MemberDao;
-import member.model.pojo.MemberBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -20,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import web.member.dao.MemberDao;
+import web.member.pojo.MemberBean;
 
 @RestController
 @RequestMapping("memberRest")

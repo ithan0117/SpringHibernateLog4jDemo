@@ -1,4 +1,4 @@
-package member.controller;
+package web.member.controller;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -11,8 +11,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
-import member.model.pojo.MemberBean;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -30,6 +28,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
+
+import web.member.pojo.MemberBean;
 
 @Controller
 @RequestMapping("extra")

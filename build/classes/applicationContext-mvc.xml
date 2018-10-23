@@ -11,10 +11,10 @@
 		http://www.springframework.org/schema/mvc 
 		http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
-	<description>Spring MVC</description>
+	<description>spring mvc</description>
 	
 	<!-- 3.2指定Spring控制器類別所在套件, 多套件時用"逗號"隔開 -->
-	<context:component-scan base-package="*.controller, security.model.service" />
+	<context:component-scan base-package="web.*.controller, web.*.*.impl" />
 
 	<!-- 3.3宣告View解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import member.model.dao.MemberDao;
-import member.model.dao.MemberDaoImpl;
-import member.model.pojo.MemberBean;
-
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+
+import web.member.dao.MemberDao;
+import web.member.dao.impl.MemberDaoImpl;
+import web.member.pojo.MemberBean;
 
 //@WebServlet("/member/findMemberByKey")
 public class MemberServlet extends HttpServlet {
