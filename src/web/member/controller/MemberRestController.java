@@ -18,28 +18,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import web.member.dao.MemberDao;
 import web.member.pojo.MemberBean;
+import web.member.service.MemberService;
 
 @RestController
 @RequestMapping("memberRest")
 public class MemberRestController {
 	@Autowired
-	private MemberDao memberDAO;
+	private MemberService memberService;
 
 	@RequestMapping("restfulExample1")
 	public MemberBean restfulExample1(@RequestParam(value = "id", required = true) int id) {
-		return memberDAO.selectMemberByKey(id);
+		return memberService.selectMemberByKey(id);
 	}
 
 	@RequestMapping("pathVariableExample/{id}")
 	public MemberBean pathVariableExample(@PathVariable int id) {
-		return memberDAO.selectMemberByKey(id);
+		return memberService.selectMemberByKey(id);
 	}
 
 	@RequestMapping("restfulExample2")
 	public List<MemberBean> restfulExample2() {
-		return memberDAO.selectAllMembers();
+		return memberService.selectAllMembers();
 	}
 	
 	@CrossOrigin(origins = "http://localhost:63342")//CORS support
