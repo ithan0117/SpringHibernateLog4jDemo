@@ -48,7 +48,7 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public MemberBean selectMemberByKey(Integer id) {
 		Session session = sessionFactory.getCurrentSession();
-		MemberBean mb = (MemberBean) session.load(MemberBean.class, id);
+		MemberBean mb = session.load(MemberBean.class, id);
 		return mb;
 	}
 	
